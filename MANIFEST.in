@@ -1,0 +1,3 @@
+include README.md
+recursive-include theme_microdisseny/static *
+recursive-include theme_microdisseny/templates *
