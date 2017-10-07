@@ -4,8 +4,15 @@ Django Theme Microdisseny
 Install
 -------
 
+```
 pip install -e git+https://github.com/Microdisseny/django-theme-microdisseny.git#egg=theme_microdisseny
+```
 
+or add to your requirements.txt file:
+
+```
+-e git+https://github.com/Microdisseny/django-theme-microdisseny.git#egg=django_theme_microdisseny
+```
 
 Use
 ---
