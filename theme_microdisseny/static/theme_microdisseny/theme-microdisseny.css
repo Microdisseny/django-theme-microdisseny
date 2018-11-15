@@ -52,6 +52,10 @@ body.login #header h1 a {
   color: #fff;
 }
 
+body.login #branding {
+  width: 100%;
+}
+
 body.login #site-name img {
   display: block;
   margin:0 auto;
