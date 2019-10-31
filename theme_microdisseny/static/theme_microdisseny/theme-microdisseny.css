@@ -126,6 +126,10 @@ ul.messagelist li.success {
   padding: 10px;
 }
 
+#changelist-filter li.selected {
+  border-left: 5px solid #0d65a3;
+}
+
 #changelist-filter a:focus, #changelist-filter a:hover, #changelist-filter li.selected a:focus, #changelist-filter li.selected a:hover {
   color: #0d65a3;
 }
