@@ -1,3 +1,13 @@
+*, :after, :before {
+    box-sizing: content-box
+}
+
+body {
+    -webkit-font-smoothing: unset;
+    -moz-osx-font-smoothing: unset;
+    font-smoothing: unset;
+}
+
 a:link, a:visited {
    color: #3588c5;;
    text-decoration: none;
@@ -80,6 +90,8 @@ div.breadcrumbs a:hover {
 h1 {
   font-size: 1.8em;
   color: #000;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 thead th {
@@ -153,4 +165,9 @@ ul.messagelist li.success {
   color: #777;
   background: #f8f8f8;
   font-size: .9em;
+}
+
+/* quasar suport */
+.quasar *, .quasar :after, .quasar :before {
+    box-sizing: border-box;
 }
