@@ -1,7 +1,16 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
 body {
     -webkit-font-smoothing: unset;
     -moz-osx-font-smoothing: unset;
     font-smoothing: unset;
+    line-height: 1.2;
+}
+
+fieldset {
+  padding: 0;
 }
 
 a:link, a:visited {
@@ -71,7 +80,8 @@ body.login #site-name img {
 }
 
 .module h2, .module caption, .inline-group h2 {
-  background: #0d65a3
+  background: #0d65a3;
+  line-height: normal;
 }
 
 div.breadcrumbs {
@@ -88,6 +98,12 @@ h1 {
   color: #000;
   line-height: 1.5;
   letter-spacing: 0;
+}
+
+h2 {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  font-weight: bold;
 }
 
 thead th {
@@ -112,6 +128,10 @@ ul.messagelist li.success {
 
 .button.default, input.default[type="submit"], .submit-row input.default {
   background: #0d65a3;
+}
+
+.submit-row a.deletelink {
+  box-sizing: content-box;
 }
 
 .selector-chosen h2 {
