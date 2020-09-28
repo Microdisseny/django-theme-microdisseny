@@ -1,7 +1,3 @@
-*, :after, :before {
-  box-sizing: border-box;
-}
-
 body {
     -webkit-font-smoothing: unset;
     -moz-osx-font-smoothing: unset;
