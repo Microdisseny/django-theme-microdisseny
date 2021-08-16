@@ -53,6 +53,11 @@ a:hover {
   color: #fff;
 }
 
+#extra-content input {
+  border: unset;
+  background-color: unset;
+}
+
 body.login #header h1 {
   text-align: center;
   line-height: 1.2em;
