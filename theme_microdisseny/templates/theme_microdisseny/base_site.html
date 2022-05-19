@@ -15,5 +15,11 @@
 {% block nav-global %}{% endblock %}
 
 {% block footer %}
-<p class="microdisseny-footer"><strong>&copy; 2017 Microdisseny</strong> &#124; <a href="http://www.microdisseny.com/">Microdisseny Giscube SLU</a> (Tots els drets reservats)</p>
+<p class="microdisseny-footer">
+{% if APP_VERSION %}
+  {{ site_header }} version {{ APP_VERSION }} |
+{% endif %}
+  <strong>&copy; 2017 - {% now 'Y' %} Microdisseny</strong> &#124;
+  <a href="http://www.microdisseny.com/">Microdisseny Giscube SLU</a> (Tots els drets reservats)
+</p>
 {% endblock %}
