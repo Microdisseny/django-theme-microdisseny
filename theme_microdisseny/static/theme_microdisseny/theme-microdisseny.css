@@ -1,26 +1,82 @@
+/* Custom properties */
+
+/* Comun theme */
+:root {
+  --primary-color: #0064a5;
+  --secondary-color: #659cc1;
+  --link-color: rgb(113, 156, 230);
+  --header-color: #eeeeee;
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+  --text-color: #eeeeee;
+  --bg-color: rgb(18, 18, 18);
+  --separate-color: rgb(88, 88, 88);
+  --menu-bg-color: rgb(33, 33, 33);
+  --selected-row: rgb(48, 48, 48);
+
+  --table-header: rgb(12, 12, 12);
+  --table-header-sorted: #252525;
+  --hover-color: #1c1c1c;
+  --input-menu-color:rgb(41, 41, 41); 
+}
+
+/* Light theme */
+html[data-theme="light"] {
+  --text-color: #000;
+  --bg-color: rgb(255, 255, 255);
+  --selected-row: rgb(224, 228, 230);
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme="auto"] {
+    --text-color: #000;
+    --bg-color: rgb(255, 255, 255);
+    --selected-row: rgb(224, 228, 230);
+   }
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] {
+    --text-color: #eeeeee;
+    --bg-color: rgb(18, 18, 18);
+    --separate-color: rgb(88, 88, 88);
+    --menu-bg-color: rgb(33, 33, 33);
+    --selected-row: rgb(48, 48, 48);
+
+    --table-header: rgb(12, 12, 12);
+    --table-header-sorted: #252525;
+    --hover-color: #1c1c1c;
+    --input-menu-color:rgb(41, 41, 41); 
+   }
+}
+
 body {
     -webkit-font-smoothing: unset;
     -moz-osx-font-smoothing: unset;
     font-smoothing: unset;
     line-height: 1.2;
+    background: var(--bg-color);
 }
 
 fieldset {
   padding: 0;
 }
 
+/* LINKS */
 a:link, a:visited {
-   color: #3588c5;;
+   color: var(--link-color);
    text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 #header {
-  background: #0d65a3;
+  background: var(--primary-color);
   color: #fff;
   height: auto;
   padding: 18px 40px;
@@ -76,22 +132,22 @@ body.login #site-name img {
 }
 
 .module h2, .module caption, .inline-group h2 {
-  background: #0d65a3;
+  background: var(--primary-color);
   line-height: normal;
 }
 
 div.breadcrumbs {
-  background: #99c3ea;
-  color: #0d65a3
+  background: var(--secondary-color);
+  color: var(--text-color)
 }
 
 div.breadcrumbs a:hover {
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 h1 {
   font-size: 1.8em;
-  color: #000;
+  color: var(--text-color);
   line-height: 1.5;
   letter-spacing: 0;
 }
@@ -103,15 +159,15 @@ h2 {
 }
 
 thead th {
-   background: #e0edf6;
+   background: var(--table-header);
 }
 
 thead th.sorted {
-  background: #e0edf6;
+  background: var(--table-header-sorted);
 }
 
 table thead th .text a:focus, table thead th .text a:hover {
-  background: #e3f2fe;
+  background: var(--hover-color);
 }
 
 ul.messagelist li.success {
@@ -123,7 +179,7 @@ ul.messagelist li.success {
 }
 
 .button.default, input.default[type="submit"], .submit-row input.default {
-  background: #0d65a3;
+  background: var(--primary-color);
 }
 
 .submit-row a.deletelink {
@@ -143,7 +199,7 @@ ul.messagelist li.success {
 }
 
 .object-tools a:focus, .object-tools a:hover {
-  background-color: #0d65a3;
+  background-color: var(--primary-color);
 }
 
 #changelist-search div {
@@ -151,11 +207,11 @@ ul.messagelist li.success {
 }
 
 #changelist-filter li.selected {
-  border-left: 5px solid #0d65a3;
+  border-left: 5px solid var(--primary-color);
 }
 
 #changelist-filter a:focus, #changelist-filter a:hover, #changelist-filter li.selected a:focus, #changelist-filter li.selected a:hover {
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 .calendar caption, .calendarbox h2 {
@@ -163,18 +219,30 @@ ul.messagelist li.success {
 }
 
 .calendar td.selected a {
-   background: #0d65a3!important;
+   background: var(--primary-color)!important;
 }
 
 .calendar td a:focus, .timelist a:focus, .calendar td a:hover, .timelist a:hover {
    background: #81b2d6!important;
 }
 
+#nav-sidebar {
+  background: var(--menu-bg-color);
+}
+
+#nav-filter {
+  background: var(--input-menu-color);
+}
+
+#nav-filter::-webkit-input-placeholder {
+  color: rgb(199, 199, 199)  ;
+}
+
 .microdisseny-footer {
   padding: 20px 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--separate-color);
   margin: 60px 0 0;
-  color: #777;
-  background: #f8f8f8;
+  color: var(--text-color);
+  background: var(--bg-color);
   font-size: .9em;
 }
