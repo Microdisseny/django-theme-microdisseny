@@ -2,6 +2,7 @@
 
 /* Common theme */
 :root {
+  --primary-font: 'Roboto', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --primary-color: #0d65a3;
   --secondary-color: #99c3ea;
 
@@ -92,6 +93,7 @@ html[data-theme="light"] {
 body {
     -webkit-font-smoothing: unset;
     -moz-osx-font-smoothing: unset;
+    font-family: var(--primary-font);
     font-smoothing: unset;
     line-height: 1.2;
     background: var(--bg-color);
