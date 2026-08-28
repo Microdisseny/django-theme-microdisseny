@@ -1,33 +1,192 @@
+/* Custom properties */
+
+/* Common theme */
+:root {
+  --primary-font: 'Roboto', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --primary-color: #0d65a3;
+  --secondary-color: #99c3ea;
+
+  --blue-5: #3b8ac3;
+  --blue-6: #73abd3;
+  --blue-7: #0a456f;
+  --blue-8: #81b2d6;
+
+  --white: #fff;
+
+  --black: #000;
+  --black-1: #0c0c0c;
+  --black-2: #121212;
+  --black-3: #1c1c1c;
+  --black-4: #222222;
+  --black-5: #282828;
+  --black-6: #2e2e2e;
+
+  --Grey-1: #777777;
+  --Grey-2: #ededed;
+  --Grey-3: #f8f8f8;
+
+  --link-color: var(--blue-5);
+  --header-color: var(--white) !important;
+  --breadcrumbs-link-fg: var(--white) !important;
+  --breadcrumbs-fg: var(--primary-color) !important;
+
+  --color-scheme: light;
+}
+
+/* Dark theme */
+html[data-theme="dark"] {
+  --text-color: var(--white);
+  --bg-color: var(--black-2);
+  --menu-bg-color: var(--black-2);
+  --selected-row: var(--black-6);
+  --table-header: var(--black-1);
+  --table-header-sorted: var(--black-1);
+  --hover-color: var(--black-3);
+  --input-menu-color: var(--black-5);
+  --footer-bg: var(--black-4);
+  --footer-color: var(--white);
+  --footer-border: #4d4d4d;
+  color-scheme: dark;
+
+  /* Variables de Django Admin */
+  --body-bg: var(--black-2);
+  --body-fg: #eeeeee;
+  --darkened-bg: var(--black-3);
+  --selected-bg: var(--black-5);
+  --border-color: #353535;
+  --hairline-color: #272727;
+}
+
+/* Light theme */
+html[data-theme="light"] {
+  --text-color: var(--black);
+  --bg-color: var(--white);
+  --selected-row: var(--Grey-2);
+  --table-header: #e0edf6;
+  --table-header-sorted: #e0edf6;
+  --footer-bg: var(--Grey-3);
+  --footer-border: var(--Grey-2);
+  --footer-color: var(--Grey-1);
+  color-scheme: light;
+
+  /* Variables de Django Admin */
+  --body-bg: var(--white);
+  --body-fg: #333;
+  --darkened-bg: var(--Grey-3);
+  --selected-bg: var(--Grey-2);
+  --border-color: #ccc;
+  --hairline-color: #e8e8e8;
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme="auto"] {
+    --text-color: var(--black);
+    --bg-color: var(--white);
+    --selected-row: var(--Grey-2);
+    --table-header: #e0edf6;
+    --table-header-sorted: #e0edf6;
+    --footer-bg: var(--Grey-3);
+    --footer-border: var(--Grey-2);
+    --footer-color: var(--Grey-1);
+    color-scheme: light;
+
+    /* Variables de Django Admin */
+    --body-bg: var(--white);
+    --body-fg: #333;
+    --darkened-bg: var(--Grey-3);
+    --selected-bg: var(--Grey-2);
+    --border-color: #ccc;
+    --hairline-color: #e8e8e8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] {
+    --text-color: var(--white);
+    --bg-color: var(--black-2);
+    --menu-bg-color: var(--black-2);
+    --selected-row: var(--black-6);
+    --table-header: var(--black-1);
+    --table-header-sorted: var(--black-1);
+    --hover-color: var(--black-3);
+    --input-menu-color: var(--black-5);
+    --footer-bg: var(--black-4);
+    --footer-color: var(--white);
+    --footer-border: rgb(77, 77, 77);
+    color-scheme: dark;
+
+    /* Variables de Django Admin */
+    --body-bg: var(--black-2);
+    --body-fg: #eeeeee;
+    --darkened-bg: var(--black-3);
+    --selected-bg: var(--black-5);
+    --border-color: #353535;
+    --hairline-color: #272727;
+  }
+}
+
+/* Checkboxes i radios */
+html[data-theme="light"] input[type="checkbox"],
+html[data-theme="light"] input[type="radio"] {
+  accent-color: var(--primary-color);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] input[type="checkbox"],
+html[data-theme="dark"] input[type="radio"] {
+  accent-color: var(--primary-color);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme="auto"] input[type="checkbox"],
+  html[data-theme="auto"] input[type="radio"] {
+    accent-color: var(--primary-color);
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] input[type="checkbox"],
+  html[data-theme="auto"] input[type="radio"] {
+    accent-color: var(--primary-color);
+    color-scheme: dark;
+  }
+}
+
 body {
-    -webkit-font-smoothing: unset;
-    -moz-osx-font-smoothing: unset;
-    font-smoothing: unset;
-    line-height: 1.2;
+  -webkit-font-smoothing: unset;
+  -moz-osx-font-smoothing: unset;
+  font-family: var(--primary-font);
+  font-smoothing: unset;
+  line-height: 1.2;
+  background: var(--bg-color);
 }
 
 fieldset {
   padding: 0;
 }
 
+/* LINKS */
 a:link, a:visited {
-   color: #3588c5;;
-   text-decoration: none;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 #header {
-  background: #0d65a3;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
   height: auto;
   padding: 18px 40px;
 }
 
 #header a:link, #header a:visited {
-  color: #fff;
+  color: var(--white);
   border-bottom: none;
 }
 
@@ -50,7 +209,7 @@ a:hover {
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
-  color: #fff;
+  color: var(--white);
 }
 
 body.login #header h1 {
@@ -60,7 +219,7 @@ body.login #header h1 {
 }
 
 body.login #header h1 a {
-  color: #fff;
+  color: var(--white);
 }
 
 body.login #branding {
@@ -69,29 +228,29 @@ body.login #branding {
 
 body.login #site-name img {
   display: block;
-  margin:0 auto;
+  margin: 0 auto;
   width: 50px;
   height: auto;
   padding-bottom: 10px;
 }
 
 .module h2, .module caption, .inline-group h2 {
-  background: #0d65a3;
+  background: var(--primary-color);
   line-height: normal;
 }
 
 div.breadcrumbs {
-  background: #99c3ea;
-  color: #0d65a3
+  background: var(--secondary-color);
+  color: --breadcrumbs-fg;
 }
 
 div.breadcrumbs a:hover {
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 h1 {
   font-size: 1.8em;
-  color: #000;
+  color: var(--text-color);
   line-height: 1.5;
   letter-spacing: 0;
 }
@@ -103,15 +262,15 @@ h2 {
 }
 
 thead th {
-   background: #e0edf6;
+  background: var(--table-header);
 }
 
 thead th.sorted {
-  background: #e0edf6;
+  background: var(--table-header-sorted);
 }
 
 table thead th .text a:focus, table thead th .text a:hover {
-  background: #e3f2fe;
+  background: var(--hover-color);
 }
 
 ul.messagelist li.success {
@@ -120,10 +279,11 @@ ul.messagelist li.success {
 
 .button, input[type="submit"], input[type="button"], .submit-row input, a.button {
   background: #3b8ac3;
+  color: var(--white);
 }
 
 .button.default, input.default[type="submit"], .submit-row input.default {
-  background: #0d65a3;
+  background: var(--primary-color);
 }
 
 .submit-row a.deletelink {
@@ -143,7 +303,7 @@ ul.messagelist li.success {
 }
 
 .object-tools a:focus, .object-tools a:hover {
-  background-color: #0d65a3;
+  background-color: var(--primary-color);
 }
 
 #changelist-search div {
@@ -151,30 +311,42 @@ ul.messagelist li.success {
 }
 
 #changelist-filter li.selected {
-  border-left: 5px solid #0d65a3;
+  border-left: 5px solid var(--primary-color);
 }
 
 #changelist-filter a:focus, #changelist-filter a:hover, #changelist-filter li.selected a:focus, #changelist-filter li.selected a:hover {
-  color: #0d65a3;
+  color: var(--primary-color);
 }
 
 .calendar caption, .calendarbox h2 {
-   background: #e0edf6!important;
+  background: #e0edf6!important;
 }
 
 .calendar td.selected a {
-   background: #0d65a3!important;
+  background: var(--primary-color)!important;
 }
 
 .calendar td a:focus, .timelist a:focus, .calendar td a:hover, .timelist a:hover {
-   background: #81b2d6!important;
+  background: var(--blue-8)!important;
+}
+
+#nav-sidebar {
+  background: var(--menu-bg-color);
+}
+
+#nav-filter {
+  background: var(--input-menu-color);
+}
+
+#nav-filter::-webkit-input-placeholder {
+  color: #c7c7c7;
 }
 
 .microdisseny-footer {
   padding: 20px 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--footer-border);
   margin: 60px 0 0;
-  color: #777;
-  background: #f8f8f8;
+  color: var(--footer-color);
+  background: var(--footer-bg);
   font-size: .9em;
 }
